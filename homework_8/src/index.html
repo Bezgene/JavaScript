@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .none {
+      display: none;
+    }
+    .redOutline {
+      outline: red 2px solid;
+    }
+    input:focus {
+      outline: green 2px solid;
+    }
+    .content {
+      margin-top: 10px;
+    }
+    span {
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 13px;
+      line-height: 15px;
+      border: 1px solid #d2d2d2;
+      border-radius: 40px;
+      cursor: pointer;
+      background: #FFF;
+      color: gray;
+    }
+    span::after {
+      content: ' x';
+      color: red;
+      padding-left: 10px;
+      cursor: pointer;
+    }
+    #tip {
+      color: red;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+<div class="content">
+  <label for="price">Price: </label>
+  <input type="text" id="price" placeholder="Enter a price">
+  <div id="tip" class="none"></div>
+</div>
+<div id="spanList" class="content"></div>
+
+<script>
+  document.getElementById("price").addEventListener("blur", function () {
+    const priceInput = document.getElementById("price");
+    const price = Number(priceInput.value);
+    const tip = document.getElementById("tip");
+    const spanList = document.getElementById("spanList");
+
+    if (price <= 0 || isNaN(price)) {
+      tip.innerText = 'Please enter correct price';
+      tip.classList.remove('none');
+      priceInput.classList.add('redOutline');
+    } else {
+      priceInput.classList.remove('redOutline');
+      tip.classList.add('none');
+
+      let spanNode = document.createElement('span');
+      spanNode.textContent = `Текущая цена: ${price}`;
+      spanNode.onclick = function() {
+        spanNode.remove();
+        priceInput.value = '';
+      };
+      spanList.appendChild(spanNode);
+    }
+  });
+
+  document.getElementById("price").addEventListener("focus", function () {
+    document.getElementById("price").classList.remove('redOutline');
+    document.getElementById("tip").classList.add('none');
+  });
+</script>
+</body>
+</html>
