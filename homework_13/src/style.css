@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+header ul {
+    list-style-type: none;
+}
+
+header ul li {
+    display: inline;
+    margin: 0 48px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #16a085;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header ul li a:hover {
+    color: #149174;
+}
+
+.hero {
+    height: 75vh;
+    background-image: url('your-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+.content {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.text-block {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    letter-spacing: 0.7px;
+    text-align: center;
+}
+
+.text-block h1 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    text-align: center;
+    letter-spacing: 4.5px;
+}
+
+.text-block p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+button {
+    background-color: #16a085;
+    color: white;
+    border: none;
+    padding: 15px 38px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #149174;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+footer {
+    position: relative;
+    left: 770px;
+    padding: 100px;
+    background-color: white;
+    font-size: 16px;
+    margin-top: 10px;
+    letter-spacing: 1.6px;
+}
+.dark-theme {
+    background-color: #444444;
+    color: #ccc;
+}
+
+.dark-theme header, .dark-theme footer {
+    background-color: #444444;
+}
+
+.dark-theme header ul li a {
+    color: #ddd;
+}
+
+.dark-theme .text-block {
+    background-color: #444444;
+}
+
+.dark-theme .content {
+    background-color: #444444;
+}
